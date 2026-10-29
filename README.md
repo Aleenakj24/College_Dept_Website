@@ -37,7 +37,6 @@ FISAT-CSE-Department-Website/
 ├── README.md
 ├── image/
 │   └── fisat.jpg
-└── report.tex
 ```
 
 **Note:** Keep `image/fisat.jpg` in the specified folder if you want the college image to display correctly. Include `report.tex` only if you are storing the LaTeX report in the same repository.
