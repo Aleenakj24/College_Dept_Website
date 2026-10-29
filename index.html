@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of CSE | FISAT</title>
+
+    
+<style>
+    :root {
+        --navy: #102B50;
+        --orange: #F28C28;
+        --white: #FFFFFF;
+        --light: #F5F7FA;
+        --text: #333333;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+        background: var(--navy);
+        color: var(--white);
+        text-align: center;
+        padding: 25px 15px;
+        border-bottom: 4px solid var(--orange);
+    }
+
+    .college-logo {
+        width: 85px;
+        height: auto;
+        display: block;
+        margin: 0 auto 12px;
+        background: white;
+        padding: 4px;
+        border-radius: 4px;
+    }
+
+    header h1 {
+        margin: 5px 0;
+        font-size: 26px;
+    }
+
+    header h2 {
+        font-size: 18px;
+        font-weight: normal;
+        margin: 5px 0;
+    }
+
+    header p {
+        color: var(--orange);
+        margin-bottom: 0;
+    }
+
+    /* Navigation */
+    nav {
+        background: var(--white);
+        padding: 14px;
+        text-align: center;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    nav a {
+        color: var(--navy);
+        text-decoration: none;
+        margin: 0 12px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: var(--orange);
+    }
+
+    /* Content */
+    main {
+        max-width: 1000px;
+        margin: 25px auto;
+        padding: 0 18px;
+    }
+
+    section {
+        background: var(--white);
+        padding: 22px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border-left: 3px solid var(--orange);
+        scroll-margin-top: 15px;
+    }
+
+    section h2 {
+        color: var(--navy);
+        margin-top: 0;
+    }
+
+    h3 {
+        color: var(--navy);
+    }
+
+    a {
+        color: #174F85;
+    }
+
+    li {
+        margin-bottom: 6px;
+    }
+
+    /* Faculty table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    caption {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    th, td {
+        padding: 10px;
+        border: 1px solid #dddddd;
+        text-align: left;
+    }
+
+    th {
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    tbody tr:nth-child(even) {
+        background: var(--light);
+    }
+
+    /* Enquiry form */
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        outline: 2px solid var(--orange);
+    }
+
+    button {
+        background: var(--orange);
+        color: var(--navy);
+        border: none;
+        padding: 11px 20px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    /* Footer */
+    footer {
+        background: var(--navy);
+        color: var(--white);
+        text-align: center;
+        padding: 18px;
+    }
+
+    footer a {
+        color: var(--orange);
+        text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 21px;
+        }
+
+        nav a {
+            display: inline-block;
+            margin: 5px 8px;
+        }
+
+        section {
+            padding: 16px;
+        }
+
+        table {
+            font-size: 13px;
+        }
+
+        th, td {
+            padding: 7px;
+        }
+    }
+    
+
+.semester-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+details.semester {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-left: 4px solid #F28C28;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.semester summary {
+    display: block;
+    background: #102B50;
+    color: #ffffff;
+    padding: 14px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+}
+
+.semester summary::-webkit-details-marker {
+    display: none;
+}
+
+.semester summary::after {
+    content: "+";
+    float: right;
+    color: #F28C28;
+    font-size: 20px;
+}
+
+.semester[open] summary::after {
+    content: "-";
+}
+
+.semester ul {
+    margin: 0;
+    padding: 15px 15px 15px 35px;
+    background: #ffffff;
+}
+
+.semester li {
+    margin-bottom: 8px;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Department of Computer Science and Engineering</h1>
+        <h2>Federal Institute of Science and Technology (FISAT)</h2>
+        <p>Focus on Excellence</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>About the Department</h2>
+
+            <img src="image/fisat.jpg"
+                alt="FISAT College Logo"
+                class="college-logo">
+
+            <p>
+                The Department of Computer Science and Engineering
+                focuses on quality education, practical learning
+                and the development of technical skills.
+            </p>
+
+            <p>
+                Students are encouraged to explore programming,
+                software development, research and emerging technologies.
+            </p>
+
+            <p><strong>Vision:</strong> To develop competent
+            professionals in computer science.</p>
+
+            <p><strong>Mission:</strong> To promote quality education,
+            innovation and ethical professional practices.</p>
+        </section>
+
+        
+<section id="subjects">
+    <h2>Semester-wise Curriculum</h2>
+
+    <p>Click a semester to view its subjects.</p>
+
+    <div class="semester-container">
+
+        <details class="semester">
+            <summary>Semester 1</summary>
+            <ul>
+                <li>Linear Algebra and Calculus</li>
+                <li>Engineering Physics / Engineering Chemistry</li>
+                <li>Engineering Mechanics / Engineering Graphics</li>
+                <li>Basics of Electrical and Electronics Engineering</li>
+                <li>Life Skills</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 2</summary>
+            <ul>
+                <li>Vector Calculus and Differential Equations</li>
+                <li>Engineering Physics / Engineering Chemistry</li>
+                <li>Programming in C</li>
+                <li>Professional Communication</li>
+                <li>Engineering Workshop</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 3</summary>
+            <ul>
+                <li>Discrete Mathematical Structures</li>
+                <li>Data Structures</li>
+                <li>Logic System Design</li>
+                <li>Object Oriented Programming Using Java</li>
+                <li>Data Structures Lab</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 4</summary>
+            <ul>
+                <li>Graph Theory</li>
+                <li>Computer Organization and Architecture</li>
+                <li>Database Management Systems</li>
+                <li>Operating Systems</li>
+                <li>Operating Systems Lab</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 5</summary>
+            <ul>
+                <li>Formal Languages and Automata Theory</li>
+                <li>Computer Networks</li>
+                <li>System Software</li>
+                <li>Microprocessors and Microcontrollers</li>
+                <li>Management of Software Systems</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 6</summary>
+            <ul>
+                <li>Compiler Design</li>
+                <li>Computer Graphics and Image Processing</li>
+                <li>Algorithm Analysis and Design</li>
+                <li>Program Elective I</li>
+                <li>Mini Project</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 7</summary>
+            <ul>
+                <li>Artificial Intelligence</li>
+                <li>Program Elective II</li>
+                <li>Open Elective</li>
+                <li>Seminar</li>
+                <li>Project Phase I</li>
+            </ul>
+        </details>
+
+        <details class="semester">
+            <summary>Semester 8</summary>
+            <ul>
+                <li>Distributed Computing</li>
+                <li>Program Electives</li>
+                <li>Comprehensive Course Viva</li>
+                <li>Project Phase II</li>
+            </ul>
+        </details>
+
+    </div>
+</section>
+
+
+        <section id="faculty">
+            <h2>Our Faculty</h2>
+
+            <table>
+                <caption>Faculty Members of the CSE Department</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Specialization</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Dr. Paul P Mathai</td>
+                        <td>Professor and HOD</td>
+                        <td>Object Oriented Programming </td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Reshmi R</td>
+                        <td>Associate Professor</td>
+                        <td>Algorithm Analysis and Design</td>
+                    </tr>
+                    <tr>
+                        <td>Ms. Merin Cherian</td>
+                        <td>Assistant Professor</td>
+                        <td>Artificial Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td>Ms. Deena Jose</td>
+                        <td>Assistant Professor</td>
+                        <td>Programming in Python</td>
+                    </tr>
+                    <tr>
+                        <td>Ms. Neha Beegam P.E</td>
+                        <td>Assistant Professor</td>
+                        <td>Machine Learning</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            
+        </section>
+
+        <section id="facilities">
+            <h2>Department Facilities</h2>
+
+            <article>
+                <h3>Computer Laboratories</h3>
+                <p>Facilities for programming, software development
+                and practical laboratory sessions.</p>
+            </article>
+
+            <article>
+                <h3>Library and Learning Resources</h3>
+                <p>Access to textbooks, technical journals and
+                digital learning resources.</p>
+            </article>
+
+            <article>
+                <h3>Project and Research Facilities</h3>
+                <p>Opportunities for academic projects, research
+                and technical activities.</p>
+            </article>
+        </section>
+
+        <section id="links">
+            <h2>Useful Links</h2>
+            <ul>
+                <li>
+                    <a href="https://www.fisat.ac.in/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Official FISAT Website
+                    </a>
+                </li>
+                <li><a href="#programmes">Academic Programmes</a></li>
+                <li><a href="#faculty">Faculty Information</a></li>
+            </ul>
+        </section>
+
+        <section id="enquiry">
+            <h2>Student Enquiry Form</h2>
+
+            <form action="#" method="get">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       pattern="[0-9]{10}"
+                       placeholder="Enter 10-digit phone number"
+                       required>
+
+                <label for="course">Course Preference</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="BTech CSE">B.Tech CSE</option>
+                    <option value="MTech CSE">M.Tech CSE</option>
+                </select>
+
+                <label for="message">Your Enquiry</label>
+                <textarea id="message" name="message"
+                          rows="4"
+                          placeholder="Enter your enquiry"></textarea>
+
+                <button type="submit">Submit Enquiry</button>
+            </form>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p><strong>Department:</strong>
+            Computer Science and Engineering</p>
+            <p><strong>College:</strong>
+            Federal Institute of Science and Technology (FISAT)</p>
+            <p><strong>Address:</strong>
+            Mookkannoor P.O., Angamaly, Kerala, India</p>
+            <p><strong>Website:</strong>
+                <a href="https://www.fisat.ac.in/">
+                    www.fisat.ac.in
+                </a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Department of Computer Science and Engineering</p>
+        <p>Federal Institute of Science and Technology (FISAT)</p>
+        <a href="#about">Back to Top</a>
+    </footer>
+
+</body>
+</html>
